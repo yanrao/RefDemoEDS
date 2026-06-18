@@ -1,0 +1,95 @@
+/* ── Standalone Cards block: zoom-in (hover scale up) ─────────────── */
+.card-zoom-in .cards-card-image {
+  overflow: hidden;
+}
+
+.card-zoom-in .cards-card-image picture,
+.card-zoom-in .cards-card-image img {
+  display: block;
+  width: 100%;
+  transition: transform 0.45s ease;
+  transform-origin: center center;
+}
+
+.card-zoom-in:hover .cards-card-image picture,
+.card-zoom-in:hover .cards-card-image img,
+.card-zoom-in:focus-within .cards-card-image picture,
+.card-zoom-in:focus-within .cards-card-image img {
+  transform: scale(1.12);
+}
+
+/* ── Standalone Cards block: zoom-out (rest=zoomed in, hover=reveal) ─ */
+.card-zoom-out .cards-card-image {
+  overflow: hidden;
+}
+
+.card-zoom-out .cards-card-image picture,
+.card-zoom-out .cards-card-image img {
+  display: block;
+  width: 100%;
+  transition: transform 0.45s ease;
+  transform-origin: center center;
+  transform: scale(1.18);
+}
+
+.card-zoom-out:hover .cards-card-image picture,
+.card-zoom-out:hover .cards-card-image img,
+.card-zoom-out:focus-within .cards-card-image picture,
+.card-zoom-out:focus-within .cards-card-image img {
+  transform: scale(1);
+}
+
+/* ── Carousel: zoom-in on hover (all slides) ──────────────────────── */
+.carousel.carousel-zoom-in > ul > li .cards-card-image {
+  overflow: hidden;
+}
+
+.carousel.carousel-zoom-in > ul > li .cards-card-image picture,
+.carousel.carousel-zoom-in > ul > li .cards-card-image img {
+  display: block;
+  width: 100%;
+  transition: transform 0.45s ease;
+  transform-origin: center center;
+}
+
+.carousel.carousel-zoom-in > ul > li:hover .cards-card-image picture,
+.carousel.carousel-zoom-in > ul > li:hover .cards-card-image img,
+.carousel.carousel-zoom-in > ul > li:focus-within .cards-card-image picture,
+.carousel.carousel-zoom-in > ul > li:focus-within .cards-card-image img {
+  transform: scale(1.12);
+}
+
+/* ── Carousel: zoom-out (rest=zoomed in, hover=reveal edges) ────────── */
+.carousel.carousel-zoom-out > ul > li .cards-card-image {
+  overflow: hidden;
+}
+
+.carousel.carousel-zoom-out > ul > li .cards-card-image picture,
+.carousel.carousel-zoom-out > ul > li .cards-card-image img {
+  display: block;
+  width: 100%;
+  transition: transform 0.45s ease;
+  transform-origin: center center;
+  transform: scale(1.18);
+}
+
+.carousel.carousel-zoom-out > ul > li:hover .cards-card-image picture,
+.carousel.carousel-zoom-out > ul > li:hover .cards-card-image img,
+.carousel.carousel-zoom-out > ul > li:focus-within .cards-card-image picture,
+.carousel.carousel-zoom-out > ul > li:focus-within .cards-card-image img {
+  transform: scale(1);
+}
+
+/* ── Big zoom (PhotoSwipe fullscreen slideshow) ─────────────────────── */
+.card-zoom-big .cards-card-image a.card-pswp-trigger,
+.carousel.carousel-zoom-big > ul > li .cards-card-image a.card-pswp-trigger {
+  display: block;
+  line-height: 0;
+  cursor: zoom-in;
+}
+
+.card-zoom-big .cards-card-image a.card-pswp-trigger:focus-visible,
+.carousel.carousel-zoom-big > ul > li .cards-card-image a.card-pswp-trigger:focus-visible {
+  outline: 2px solid var(--main-accent-color, #00a4e4);
+  outline-offset: 2px;
+}

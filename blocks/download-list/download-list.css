@@ -1,0 +1,154 @@
+.download {
+  /* Colors are author-controlled via the Background Color / Text Color fields
+     (set as inline custom properties by the JS). Fallbacks here give a readable
+     dark-on-light default when no value is provided. */
+  background: var(--download-bg, #fff);
+  color: var(--download-text, #1f1f1f);
+  padding: clamp(20px, 4vw, 40px);
+  border-radius: 16px;
+}
+
+.download .download__title {
+  font-size: var(--heading-font-size-l, 32px);
+  font-weight: 700;
+  margin: 0 0 32px;
+  color: inherit;
+  line-height: 1.2;
+}
+
+.download .download__empty {
+  font-size: 16px;
+  opacity: 0.8;
+  margin: 0;
+  color: inherit;
+}
+
+.download .download__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.download .download-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 4px;
+  background: transparent;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid color-mix(in srgb, var(--download-text, #1f1f1f) 15%, transparent);
+  transition: background 0.2s ease;
+}
+
+.download .download-row:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid color-mix(in srgb, var(--download-text, #1f1f1f) 15%, transparent);
+}
+
+.download .download-row:hover {
+  background: rgba(0, 0, 0, 0.04);
+  background: color-mix(in srgb, var(--download-text, #1f1f1f) 5%, transparent);
+}
+
+.download .download-row__info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+.download .download-row__icon {
+  width: 38px;
+  height: 50px;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.download .download-row__icon .download-row__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.download .download-row__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.download .download-row__name {
+  font-size: 18px;
+  font-weight: 600;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+.download .download-row__size {
+  font-size: 14px;
+  opacity: 0.65;
+  color: inherit;
+  font-weight: 400;
+}
+
+/* Beat the global `a, a:any-link` rule in styles.css that strips border/padding/color. */
+.download a.download-row__action {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px !important;
+  border: 1.5px solid currentcolor !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  font-family: var(--heading-font-family, inherit) !important;
+  line-height: 1.2 !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  text-align: center !important;
+}
+
+.download a.download-row__action::after {
+  content: none !important;
+}
+
+.download a.download-row__action:hover,
+.download a.download-row__action:focus {
+  background: var(--main-accent-color, #00a4e4) !important;
+  border-color: var(--main-accent-color, #00a4e4) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.download a.download-row__action svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .download .download-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 20px 8px;
+  }
+
+  .download a.download-row__action {
+    justify-content: center;
+  }
+}

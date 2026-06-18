@@ -1,0 +1,66 @@
+[
+  {
+    "id": "main",
+    "components": [
+      "section"
+    ]
+  },
+  {
+    "id": "section",
+    "components": [
+      "accordion",
+      "action-button",
+      "button",
+      "button",
+      "cards",
+      "carousel",
+      "columns",
+      "contentfragment",
+      "download-list",
+      "dm-asset",
+      "dm-template",
+      "embed-adaptive-form",
+      "find-a-doctor",
+      "forex",
+      "form",
+      "fragment",
+      "hero",
+      "image",
+      "promotion",
+      "quote",
+      "search",
+      "separator",
+      "tabs",
+      "teaser",
+      "text",
+      "title",
+      "title-block",
+      "video"
+    ]
+  },
+  {
+    "id": "cards",
+    "components": [
+      "card"
+    ]
+  },
+  {
+    "id": "columns",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "button",
+      "dm-asset",
+      "dm-template",
+      "image",
+      "text",
+      "title",
+      "title-block",
+      "video"
+    ]
+  }
+]

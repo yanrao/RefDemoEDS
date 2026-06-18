@@ -1,0 +1,115 @@
+{
+  "definitions": [
+    {
+      "title": "Title v2",
+      "id": "title-block",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Title Block",
+              "model": "title-block",
+              "key-value": true
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "title-block",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "title",
+          "label": "Title Text",
+          "value": "Title"
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "headingLevel",
+          "label": "Heading Level",
+          "value": "h2",
+          "options": [
+            { "name": "H1", "value": "h1" },
+            { "name": "H2", "value": "h2" },
+            { "name": "H3", "value": "h3" },
+            { "name": "H4", "value": "h4" },
+            { "name": "H5", "value": "h5" },
+            { "name": "H6", "value": "h6" }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "align",
+          "label": "Text Alignment",
+          "value": "",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "Left", "value": "align-left" },
+            { "name": "Center", "value": "align-center" },
+            { "name": "Right", "value": "align-right" }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "color",
+          "label": "Color",
+          "value": "",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "Primary", "value": "color-primary" },
+            { "name": "Light / On dark", "value": "color-light" },
+            { "name": "Dark", "value": "color-dark" },
+            { "name": "Muted", "value": "color-muted" }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "paddingTop",
+          "label": "Padding Top",
+          "value": "",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "None", "value": "pt-none" },
+            { "name": "Small", "value": "pt-small" },
+            { "name": "Medium", "value": "pt-medium" },
+            { "name": "Large", "value": "pt-large" },
+            { "name": "XLarge", "value": "pt-xlarge" }
+          ]
+        },
+        {
+          "component": "select",
+          "valueType": "string",
+          "name": "paddingBottom",
+          "label": "Padding Bottom",
+          "value": "",
+          "options": [
+            { "name": "Default", "value": "" },
+            { "name": "None", "value": "pb-none" },
+            { "name": "Small", "value": "pb-small" },
+            { "name": "Medium", "value": "pb-medium" },
+            { "name": "Large", "value": "pb-large" },
+            { "name": "XLarge", "value": "pb-xlarge" }
+          ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "bgColor",
+          "label": "Background Color",
+          "description": "Optional CSS color (hex, rgb, or var). When set, the title appears in a colored band. Examples: #0a66c2, rgb(10,102,194), var(--main-accent-color)",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

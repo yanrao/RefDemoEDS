@@ -1,0 +1,107 @@
+.dynamic-media-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.dynamic-media-video video {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* DM Player iframe wrapper - 16:9 responsive container */
+.dynamic-media-video .dm-video-player-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.dynamic-media-video .dm-video-player-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.dynamic-media-video[data-video-loaded='false'] {
+  aspect-ratio: 16 / 9;
+  background-color: #f0f0f0;
+}
+
+.dynamic-media-video[data-video-loaded='error'] {
+  aspect-ratio: 16 / 9;
+  background-color: #f8d7da;
+}
+
+.dynamic-media-video-wrapper {
+  text-align: center;
+  width: 100%;
+}
+
+/*
+ * Smart-crop rendition-based fixed heights
+ * ─────────────────────────────────────────
+ * The DM smart-crop player selects the best rendition for the container size.
+ * Heights below are derived from each rendition's aspect ratio at the
+ * breakpoint's minimum viewport width, keeping the container predictable
+ * and avoiding layout shift.
+ *
+ * Rendition        Ratio   Breakpoint   Height derivation
+ * Widescreen       16:9    ≥1200px      1200 × 9/16 = 675px
+ * Standard          4:3    900–1199px    900 × 3/4  = 675px
+ * Square            1:1    600–899px     600 × 1/1  = 600px
+ * VerticalFeed      4:5    480–599px     480 × 5/4  = 600px
+ * Vertical          9:16   <480px        capped at  600px (avoids overflow)
+ */
+
+/* Widescreen 16:9 — large screens (desktop) */
+@media (min-width: 1200px) {
+  .dynamic-media-video {
+    width: 100%;
+    height: 675px;
+    max-height: 80vh;
+  }
+}
+
+/* Standard 4:3 — medium screens (landscape tablets) */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .dynamic-media-video {
+    width: 100%;
+    height: 675px;
+    max-height: 80vh;
+  }
+}
+
+/* Square 1:1 — small tablets / large phones (landscape) */
+@media (min-width: 600px) and (max-width: 899px) {
+  .dynamic-media-video {
+    width: 100%;
+    height: 600px;
+    max-height: 85vh;
+  }
+}
+
+/* VerticalFeed 4:5 — phones (portrait) */
+@media (min-width: 480px) and (max-width: 599px) {
+  .dynamic-media-video {
+    width: 100%;
+    height: 600px;
+    max-height: 85vh;
+  }
+}
+
+/* Vertical 9:16 — narrow phones */
+@media (max-width: 479px) {
+  .dynamic-media-video {
+    width: 100%;
+    height: 600px;
+    max-height: 85vh;
+  }
+}

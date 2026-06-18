@@ -1,0 +1,39 @@
+.title-block {
+  padding-top: var(--spacing-medium, 1.5rem);
+  padding-bottom: var(--spacing-medium, 1.5rem);
+}
+
+/* When a background color is set inline, add horizontal padding + radius so
+   the title sits nicely inside a colored band instead of edge-to-edge. */
+.title-block[style*="background-color"] {
+  padding-left: var(--spacing-large, 2rem);
+  padding-right: var(--spacing-large, 2rem);
+  border-radius: 8px;
+}
+
+.title-block :is(h1, h2, h3, h4, h5, h6) {
+  margin: 0;
+}
+
+.title-block :is(h1, h2, h3, h4, h5, h6).align-left { text-align: left; }
+.title-block :is(h1, h2, h3, h4, h5, h6).align-center { text-align: center; }
+.title-block :is(h1, h2, h3, h4, h5, h6).align-right { text-align: right; }
+
+.title-block :is(h1, h2, h3, h4, h5, h6).color-primary { color: var(--main-accent-color); }
+.title-block :is(h1, h2, h3, h4, h5, h6).color-light { color: var(--text-light); }
+.title-block :is(h1, h2, h3, h4, h5, h6).color-dark { color: var(--dark-color); }
+.title-block :is(h1, h2, h3, h4, h5, h6).color-muted { color: var(--text-disabled); }
+
+/* Padding top */
+.title-block.pt-none { padding-top: 0; }
+.title-block.pt-small { padding-top: var(--spacing-small, 0.75rem); }
+.title-block.pt-medium { padding-top: var(--spacing-medium, 1.5rem); }
+.title-block.pt-large { padding-top: var(--spacing-large, 2.5rem); }
+.title-block.pt-xlarge { padding-top: var(--spacing-xlarge, 3rem); }
+
+/* Padding bottom */
+.title-block.pb-none { padding-bottom: 0; }
+.title-block.pb-small { padding-bottom: var(--spacing-small, 0.75rem); }
+.title-block.pb-medium { padding-bottom: var(--spacing-medium, 1.5rem); }
+.title-block.pb-large { padding-bottom: var(--spacing-large, 2.5rem); }
+.title-block.pb-xlarge { padding-bottom: var(--spacing-xlarge, 3rem); }

@@ -1,0 +1,156 @@
+{
+  "definitions": [
+    {
+      "title": "Hero",
+      "id": "hero",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Hero",
+              "model": "hero"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "hero",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Asset",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Alt",
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        },
+        {
+              "component": "boolean",
+              "label": "Enable Underline in Title",
+              "description": "Enable underline in title",
+              "name": "enableunderline",
+              "value": "true",
+              "valueType": "boolean"
+        },
+        {
+          "component": "select",
+          "name": "herolayout",
+          "label": "Hero Layout Style",
+          "options": [
+            {
+              "name": "Default (Asset-Background)",
+              "value": "overlay"
+            },
+            {
+              "name": "Asset Left",
+              "value": "image-left"
+            },
+            {
+              "name": "Asset Right",
+              "value": "image-right"
+            },
+            {
+              "name": "Asset Top",
+              "value": "image-top"
+            },
+            {
+              "name": "Asset Bottom",
+              "value": "image-bottom"
+            },
+            {
+              "name": "Asset-Background Text-Left",
+              "value": "image-background-text-left"
+            },
+            {
+              "name": "Asset-Background Text-Right",
+              "value": "image-background-text-right"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "backgroundstyle",
+          "label": "Text Background Style",
+          "options": [
+            {
+              "name": "Default",
+              "value": "default"
+            },
+            {
+              "name": "Theme Dark",
+              "value": "theme-dark"
+            },
+            {
+              "name": "Theme Light",
+              "value": "theme-light"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "ctalabel",
+          "label": "CTA Button Label",
+          "description": "Text shown on the call-to-action button. Leave empty to hide the button.",
+          "value": ""
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "ctalink",
+          "label": "CTA Button Link",
+          "description": "Target page or URL for the call-to-action button."
+        },
+        {
+          "component": "select",
+          "name": "ctastyle",
+          "label": "CTA Style",
+          "options": [
+            {
+              "name": "default",
+              "value": ""
+            },
+            {
+              "name": "Button",
+              "value": "button"
+            },
+            {
+              "name": "Button secondary",
+              "value": "button-secondary"
+            },
+            {
+              "name": "Link",
+              "value": "link"
+            }
+          ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "badge",
+          "label": "Badge / Highlight Text",
+          "description": "Optional pill-style label shown above the title.",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
