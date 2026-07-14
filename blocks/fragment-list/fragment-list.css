@@ -1,0 +1,547 @@
+/* ===== Fragment List Block ===== */
+.fragment-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: var(--body-font-family, system-ui, sans-serif);
+}
+
+/* Header */
+.fragment-list-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.fragment-list-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color, #333);
+  margin: 0 0 0.5rem 0;
+}
+
+.fragment-list-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-color-secondary, #666);
+  margin: 0;
+}
+
+/* Filter Panel */
+.fragment-list-filters {
+  background: var(--background-color-secondary, #f8f9fa);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-color, #333);
+  font-size: 0.9rem;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 0.75rem;
+  border: 2px solid var(--border-color, #e0e0e0);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: var(--background-color, #fff);
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--link-color, #007bff);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Results Container */
+.fragment-list-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card */
+.fragment-card {
+  background: var(--background-color, #fff);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fragment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.fragment-card-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.fragment-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Card Content */
+.fragment-card-content {
+  padding: 1.5rem;
+}
+
+.fragment-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-color, #333);
+  margin: 0 0 0.5rem 0;
+}
+
+.fragment-card-subtext {
+  font-size: 0.95rem;
+  color: var(--text-color-secondary, #666);
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+/* Tag Pills */
+.fragment-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.fragment-card-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--background-color-secondary, #f0f0f0);
+  color: var(--text-color-secondary, #555);
+  border: 1px solid var(--border-color, #e0e0e0);
+}
+
+/* CTA Buttons (theme-based) */
+.fragment-card .button-container {
+  margin: 0;
+}
+
+.fragment-card .button-container a.button {
+  margin: 0;
+}
+
+/* Static CTA (no link) — base */
+.fragment-card-cta-static .button {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 4px;
+  border: 2px solid var(--border-color, #ddd);
+  color: var(--text-color-secondary, #666);
+  background: var(--background-color, #fff);
+  cursor: default;
+}
+
+/* Static CTA — Primary variant */
+.fragment-card .cta-button.fragment-card-cta-static .button {
+  background-color: var(--main-accent-color);
+  color: var(--text-light, #fff);
+  border-color: var(--main-accent-color);
+}
+
+/* Static CTA — Secondary variant */
+.fragment-card .cta-button-secondary.fragment-card-cta-static .button {
+  background-color: transparent;
+  color: var(--main-accent-color);
+  border-color: var(--main-accent-color);
+}
+
+/* Static CTA — Dark variant */
+.fragment-card .cta-button-dark.fragment-card-cta-static .button {
+  background-color: var(--text-light, #fff);
+  color: var(--dark-color, #131313);
+  border-color: var(--dark-color, #131313);
+}
+
+/* Static CTA — Link variant */
+.fragment-card .cta-link.fragment-card-cta-static .button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--link-color, var(--main-accent-color));
+  cursor: default;
+}
+
+.fragment-card .cta-link.fragment-card-cta-static .button::after {
+  content: none;
+}
+
+/* CTA Link variant — inline link style within cards */
+.fragment-card .button-container.cta-link a.button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.fragment-card .button-container.cta-link a.button:hover {
+  background: transparent;
+  color: var(--main-accent-color);
+  box-shadow: none;
+  transform: none;
+}
+
+/* No Results */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-color-secondary, #666);
+}
+
+.no-results svg {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.no-results h3 {
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.no-results p {
+  margin: 0;
+}
+
+/* ===== Layout: Grid (default) ===== */
+.fragment-list.grid .fragment-list-results {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ===== Layout: List ===== */
+.fragment-list.list .fragment-list-results {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.fragment-list.list .fragment-card {
+  display: flex;
+  flex-direction: row;
+  min-height: 180px;
+}
+
+.fragment-list.list .fragment-card-image {
+  width: 220px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.fragment-list.list .fragment-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.25rem 1.5rem;
+}
+
+.fragment-list.list .fragment-card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.fragment-list.list .fragment-card .button-container {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* ===== Layout: Compact ===== */
+.fragment-list.compact .fragment-list-results {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.fragment-list.compact .fragment-card-image {
+  height: 140px;
+}
+
+.fragment-list.compact .fragment-card-content {
+  padding: 1rem;
+}
+
+.fragment-list.compact .fragment-card-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.fragment-list.compact .fragment-card-subtext {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.fragment-list.compact .fragment-card .button-container a.button {
+  padding: 8px 14px !important;
+  font-size: 0.9rem;
+}
+
+/* ===== Layout: Articles ===== */
+.fragment-list.articles .fragment-list-results {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.fragment-list.articles .fragment-card {
+  border-radius: 0;
+  background: #efefef;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.fragment-list.articles .fragment-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.fragment-list.articles .fragment-card-image {
+  height: 210px;
+}
+
+.fragment-list.articles .fragment-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.fragment-list.articles .fragment-card-title {
+  color: var(--main-accent-color, #c2410c);
+  font-size: 1.95rem;
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 0.65rem;
+}
+
+.fragment-list.articles .fragment-card-subtext {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--text-color-secondary, #5a5a5a);
+  margin-bottom: 1.25rem;
+}
+
+.fragment-list.articles .fragment-card .button-container {
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.fragment-list.articles .fragment-card .button-container a.button {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.fragment-list.articles .fragment-card .button-container a.button::after {
+  font-size: 1rem;
+}
+
+/* ===== Layout: Masonry ===== */
+.fragment-list.masonry .fragment-list-results {
+  display: block;
+  columns: 3;
+  column-gap: 1.5rem;
+}
+
+.fragment-list.masonry .fragment-card {
+  break-inside: avoid;
+  margin-bottom: 1.5rem;
+}
+
+.fragment-list.masonry .fragment-card-image {
+  height: auto;
+}
+
+.fragment-list.masonry .fragment-card-image img {
+  height: auto;
+}
+
+/* ===== Layout: Carousel ===== */
+.fragment-list.carousel .fragment-list-results {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.fragment-list.carousel .fragment-list-results::-webkit-scrollbar {
+  height: 6px;
+}
+
+.fragment-list.carousel .fragment-list-results::-webkit-scrollbar-track {
+  background: var(--background-color-secondary, #f0f0f0);
+  border-radius: 3px;
+}
+
+.fragment-list.carousel .fragment-list-results::-webkit-scrollbar-thumb {
+  background: var(--border-color, #ccc);
+  border-radius: 3px;
+}
+
+.fragment-list.carousel .fragment-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+}
+
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.carousel-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color, #e0e0e0);
+  background: var(--background-color, #fff);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.carousel-nav-btn:hover {
+  border-color: var(--link-color, #007bff);
+  background: var(--background-color-secondary, #f8f9fa);
+}
+
+/* ===== Loading & Error States ===== */
+.loading-state {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-color-secondary, #666);
+  font-size: 1.1rem;
+  grid-column: 1 / -1;
+}
+
+.error-state {
+  text-align: center;
+  padding: 2rem;
+  color: var(--error-color, #dc3545);
+  background: var(--error-background, #f8d7da);
+  border: 1px solid var(--error-border, #f5c6cb);
+  border-radius: 8px;
+  margin: 1rem 0;
+  grid-column: 1 / -1;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .fragment-list {
+    padding: 1rem;
+  }
+
+  .fragment-list-title {
+    font-size: 2rem;
+  }
+
+  .filter-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .fragment-list-results {
+    grid-template-columns: 1fr;
+  }
+
+  /* List layout stacks on mobile */
+  .fragment-list.list .fragment-card {
+    flex-direction: column;
+  }
+
+  .fragment-list.list .fragment-card-image {
+    width: 100%;
+    height: 180px;
+  }
+
+  /* Masonry falls to single column */
+  .fragment-list.masonry .fragment-list-results {
+    columns: 1;
+  }
+
+  /* Carousel keeps horizontal scroll */
+  .fragment-list.carousel .fragment-card {
+    flex: 0 0 260px;
+  }
+
+  .fragment-list.articles .fragment-card-image {
+    height: 180px;
+  }
+
+  .fragment-list.articles .fragment-card-content {
+    padding: 1rem;
+  }
+
+  .fragment-list.articles .fragment-card-title {
+    font-size: 1.5rem;
+  }
+
+  .fragment-list.articles .fragment-card-subtext {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .fragment-list.articles .fragment-card .button-container a.button {
+    font-size: 1rem;
+  }
+
+  .fragment-list.articles .fragment-card .button-container a.button::after {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .fragment-list-filters {
+    padding: 1rem;
+  }
+
+  .fragment-card-content {
+    padding: 1rem;
+  }
+
+  .fragment-list.carousel .fragment-card {
+    flex: 0 0 85vw;
+  }
+}
