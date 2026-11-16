@@ -20,8 +20,8 @@
   - Template contains placeholder blocks with various styling options
 
 ## Environments
-- Preview: http://main--refdemoeds--aemxsc.aem.page/
-- Live: http://main--refdemoeds--aemxsc.aem.live/
+- Preview: http://dev--refdemoeds--yanrao.aem.page/
+- Live: http://dev--refdemoeds--yanrao.aem.live/
 
 ## Documentation
 [Ref Demo 2.0](https://adobe.com/go/refdemo) 
