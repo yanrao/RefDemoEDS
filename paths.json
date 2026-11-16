@@ -13,10 +13,26 @@
     "/content/wknd-universal/configuration:/.helix/config.json",
     "/content/wknd-universal/metadata:/metadata.json",
     "/content/wknd-universal/redirects:/redirects.json",
-    "/content/wknd-universal/placeholders:/placeholders.json"
+    "/content/wknd-universal/placeholders:/placeholders.json",
+    "/content/refdemoeds/language-masters/en:/",
+    "/content/refdemoeds/language-masters/en/:/en/",
+    "/content/refdemoeds/language-masters/fr/:/fr/",
+    "/content/refdemoeds/language-masters/fr:/fr",
+    "/content/refdemoeds/language-masters/es/:/es/",
+    "/content/refdemoeds/language-masters/es:/es",
+    "/content/refdemoeds/language-masters/ja/:/ja/",
+    "/content/refdemoeds/language-masters/ja:/ja",
+    "/content/refdemoeds/language-masters/de/:/de/",
+    "/content/refdemoeds/language-masters/de:/de",
+    "/content/refdemoeds/configuration:/.helix/config.json",
+    "/content/refdemoeds/metadata:/metadata.json",
+    "/content/refdemoeds/redirects:/redirects.json",
+    "/content/refdemoeds/placeholders:/placeholders.json"
   ],
   "includes": [
     "/content/wknd-universal/",
-    "/content/dam/wknd-universal/"
+    "/content/dam/wknd-universal/",
+    "/content/refdemoeds/",
+    "/content/dam/refdemoeds/"
   ]
 }
